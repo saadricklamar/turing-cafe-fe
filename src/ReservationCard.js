@@ -1,4 +1,5 @@
 import React from 'react';
+import './ReservationCard.css';
 
 
 const reservationCard = ({name, date, time, number}) => {

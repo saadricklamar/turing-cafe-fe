@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReservationContainer from './ReservationContainer';
+import ReservationForm from './ReservationForm';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,12 @@ class App extends Component {
     .then(results => this.setState({reservations: results}))
   }
 
+  addReservation = (reservation) => {
+    const newReservation = {...reservation, id:Date.now()};
+    const reservations = [...this.state.reservations, newReservation];
+    this.setState({reservations})
+  }
+
 
   render() {
     const { reservations } = this.state
@@ -24,7 +31,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <ReservationForm reservations={reservations} addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
           <ReservationContainer reservations={reservations}/>
