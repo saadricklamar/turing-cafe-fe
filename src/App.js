@@ -29,10 +29,10 @@ class App extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: 'Saad',
-        date: '4/20',
-        time: '4:20pm',
-        number: '420'
+        name: reservation.name,
+        date: reservation.date,
+        time: reservation.time,
+        number: reservation.number
       })
     }).then((res) => res.json())
     .then((data) =>  console.log(data))
