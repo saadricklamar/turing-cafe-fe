@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import ReservationContainer from './ReservationContainer';
 import './App.css';
 
 class App extends Component {
-  constructor () {
-    super() 
+  constructor (props) {
+    super(props) 
     this.state = {
       reservations: []
     }
@@ -18,7 +19,7 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.reservations)
+    const { reservations } = this.state
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -26,14 +27,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          {this.state.reservations.map(reservation => {
-            return <article>
-                    <h1>{reservation.name}</h1>
-                    <p>{reservation.date}</p>
-                    <p>{reservation.time}</p>
-                    <p>Number of guests:{reservation.number}</p>
-                  </article>
-          })}
+          <ReservationContainer reservations={reservations}/>
         </div>
       </div>
     )
