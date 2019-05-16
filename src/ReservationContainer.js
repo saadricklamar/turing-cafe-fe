@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ReservationCard from './ReservationCard';
 import './ReservationContainer.css';
 
-const ReservationContainer = ({reservations}) => {
+const ReservationContainer = ({reservations, deleteRes}) => {
     const reservationCards = reservations.map(reservation => {
-        return <ReservationCard {...reservation} key={reservation.id}/>
+        return <ReservationCard {...reservation} key={reservation.id} deleteRes={deleteRes}/>
       })
 
       return (

@@ -22,10 +22,6 @@ class ReservationForm extends Component {
         this.props.addReservation(this.state)
     }
 
-
-
-
-
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
@@ -33,7 +29,7 @@ class ReservationForm extends Component {
                 <input type='text' name='date' onChange={this.handleChange}/>
                 <input type='text' name='time' onChange={this.handleChange}/>
                 <input type='text' name='number' onChange={this.handleChange}/>
-                <button>Submit</button>
+                <button>Make Reservation</button>
             </form>
 
         )
