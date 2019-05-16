@@ -25,16 +25,18 @@ class App extends Component {
     fetch('http://localhost:3001/api/v1/reservations', {
       method: 'POST',
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        id: '',
-        name: '',
-        date: '',
-        time: '',
-        number: ''
-      }),
-    })
+        name: 'Saad',
+        date: '4/20',
+        time: '4:20pm',
+        number: '420'
+      })
+    }).then((res) => res.json())
+    .then((data) =>  console.log(data))
+    .catch((err)=>console.log(err))
   }
 
     deleteRes = (id) => {
